@@ -14,7 +14,7 @@ st.title('Price Calculator')
 # Input fields
 cost = st.number_input('Enter the cost', value=0)
 shipping_fee = st.number_input('Enter the shipping fee', value=6500)
-profit = st.number_input('Enter the profit', value=5000)
+profit = st.number_input('Enter the mini profit', value=5000)
 fee_rate = st.number_input('Enter the fee rate', value=.18)
 sell_price = st.number_input('Enter the Sell Price', value=0)
 
@@ -28,10 +28,10 @@ price = math.floor((cost + shipping_fee + profit) / (exchange_rate * 0.96) / (1 
 st.write('Break-Even price: ', price)
 
 # Calculate the price
-profit = math.floor((sell_price - price) * exchange_rate)
+profit2 = math.floor((sell_price - price) * exchange_rate + profit)
 
 # Display the result
-st.write('Profit price: ', profit)
+st.write('Profit price: ', profit2)
 
 st.write('YEN/USD: ', exchange_rate)
 
